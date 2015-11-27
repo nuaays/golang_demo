@@ -1,0 +1,6 @@
+
+test = "hello test"
+
+[nginxlog]
+great="hi, wang"
+
