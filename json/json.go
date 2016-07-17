@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"os"
+//	"os"
 )
 
 type Stream struct {
@@ -17,8 +17,19 @@ type StreamTable struct {
 	T []Stream `json:"table"`
 }
 
-func main() {
+type Meta struct {
+	Count      uint64 `json: "count"`
+	Start      uint64 `json: "start"`
+	TotalCount uint64 `json: "total_count"`
+}
 
+type Body struct {
+	Content string `json: "content"`
+	Meta    `json: "meta"`
+}
+
+func main() {
+/*
 	stream := Stream{0, 0, 0, "/var/heka"}
 	b, err := json.Marshal(stream)
 	if err != nil {
@@ -43,5 +54,15 @@ func main() {
 	if err != nil {
 		fmt.Println("failed to write")
 	}
+*/
+
+	var body Body
+	body.Meta.Count = 10
+	body.Meta.Start = 0
+	body.Meta.TotalCount = 100
+
+	body.Content = "hello world "
+	b, _ := json.Marshal(body)
+	fmt.Println(string(b))
 
 }

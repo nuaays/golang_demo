@@ -26,8 +26,7 @@ func main() {
 	var string_value string = "hello, 世界"
 	//	var int_value int = 1
 	var float_value float32 = 2.0
-	//	var double_value float64 = 3.34532
-
+	//	var double_value float64 = 3.3453
 	b := []byte(string_value)
 	for len(b) > 0 {
 		r, size := utf8.DecodeRune(b)
@@ -49,4 +48,11 @@ func main() {
 	b = buf.Bytes()
 
 	fmt.Print(buf.Bytes())
+
+
+	fmt.Println("hell ----------------------------------------")
+	fmt.Println("hell ----------------------------------------")
+	fmt.Println("hell ----------------------------------------")
+
+
 }

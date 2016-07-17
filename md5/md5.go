@@ -12,7 +12,7 @@ package main
 
 import (
 	"crypto/md5"
-	"flag"
+//	"flag"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -121,12 +121,13 @@ func ScanConfigDir(config_path *string) []string {
 }
 func main() {
 
-	config_path := flag.String("config", "/home/wanghe/work/heka/build/heka/conf", "config file or directory")
-	flag.Parse()
-	files := ScanTomlFile(config_path)
-	fmt.Println(files)
-	contents := MergeTomlFile(files)
-	fmt.Println(contents)
+//					config_path := flag.String("config", "/home/wanghe/work/heka/build/heka/conf", "config file or directory")
+//	flag.Parse()
+//	files := ScanTomlFile(config_path)
+//	fmt.Println(files)
+//	contents := MergeTomlFile(files)
+	//fmt.Println(contents)
+	contents := "ffffffffff"
 	_md5 := GeneralMd5(contents)
 	fmt.Printf("%x\n", _md5)
 }
