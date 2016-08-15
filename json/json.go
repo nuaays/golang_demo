@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"time"
 //	"os"
 )
 
@@ -28,6 +29,10 @@ type Body struct {
 	Meta    `json: "meta"`
 }
 
+type TestJSON struct {
+				CreatedAt time.Time `json: "created_at"`
+				UpdatedAt time.Time `json: "updated_at"`
+}
 func main() {
 /*
 	stream := Stream{0, 0, 0, "/var/heka"}
@@ -64,5 +69,25 @@ func main() {
 	body.Content = "hello world "
 	b, _ := json.Marshal(body)
 	fmt.Println(string(b))
+
+
+	js := TestJSON{CreatedAt: time.Now(), UpdatedAt: time.Now()}
+
+	b, _ = json.Marshal(js)
+	fmt.Println(string(b))
+
+	var a TestJSON
+	json.Unmarshal(b, &a)
+	fmt.Println(b)
+
+//	StreamId    int    `json:"stream_id"`
+//	SubStreamId int    `json:"sub_stream_id"`
+//	Hash        int    `json:"hash"`
+//	FileName    string `json:"file_name"`
+
+stream := Stream{StreamId: 0, SubStreamId: 1, Hash: 3, FileName: "ttttttt"}
+b, _ = json.Marshal(stream)
+fmt.Println(string(b))
+
 
 }
