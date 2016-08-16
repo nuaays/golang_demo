@@ -3,3 +3,6 @@ Cats = [ "Cauchy", "Plato" ]
 Pi = 3.14
 Perfection = [ 6, 28, 496, 8128 ]
 DOB = 1987-07-05T05:45:00Z
+
+[test]
+data=[1, 2, 3, 4, 5]

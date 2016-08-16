@@ -24,9 +24,14 @@ func main() {
 	start := *s
 	count := *c
 
+	data = pagination(start, count, data)
+	fmt.Println(data)
+}
+
+func pagination(start int, count int, data []interface{}) []interface{} {
 	end := start + count
 	if end > len(data) {
 		end = len(data)
 	}
-	fmt.Println(data[start:end])
+	return array[start:end]
 }
