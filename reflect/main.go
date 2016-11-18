@@ -24,7 +24,6 @@ func main() {
 	tr := "Bar"
 	if RegStruct[tr] != nil {
 		t := reflect.ValueOf(RegStruct[tr]).Type()
-		fmt.Println("t === ", t)
 		v := reflect.New(t).Elem()
 		fmt.Println(v)
 	}
